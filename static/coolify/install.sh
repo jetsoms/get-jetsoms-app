@@ -67,7 +67,7 @@ doNotTrack() {
 restartCoolify() {
     if [ -f "$COOLIFY_CONF_FOUND" ]; then
         echo "Restarting the app."
-        cd ~/coolify && sudo docker run --rm -tid --env-file $COOLIFY_CONF_FOUND -v /var/run/docker.sock:/var/run/docker.sock -v coolify-db-sqlite ghcr.io/coollabsio/coolify:${VERSION:-latest} /bin/sh -c "env | grep COOLIFY > .env && docker compose up -d --force-recreate" >/dev/null
+        cd ~/coolify && sudo docker run --rm -tid --env-file $COOLIFY_CONF_FOUND -v /var/run/docker.sock:/var/run/docker.sock -v coolify-db-sqlite ghcr.io/jetsoms/host-jetsoms-app:${VERSION:-latest} /bin/sh -c "env | grep COOLIFY > .env && docker compose up -d --force-recreate" >/dev/null
         exit 0
     else
         echo "The app never installed on this server. Cannot restart."
