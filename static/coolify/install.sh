@@ -18,7 +18,7 @@ COOLIFY_APP_ID=$(cat /proc/sys/kernel/random/uuid)
 COOLIFY_SECRET_KEY=$(echo $(openssl rand -base64 1024) | sha256sum | base64 | head -c 32)
 COOLIFY_SECRET_KEY_BETTER=$COOLIFY_SECRET_KEY
 COOLIFY_WHITE_LABELED=true
-COOLIFY_WHITE_LABELED_ICON=https://jetsoms-images.b-cdn.net/jetsoms-logo-white.webp
+COOLIFY_WHITE_LABELED_ICON=https://jetsoms-images.b-cdn.net/favicon.WebP
 COOLIFY_AUTO_UPDATE=false
 
 COOLIFY_CONF_FOUND=$(find ~ -path '*/coolify/.env')
